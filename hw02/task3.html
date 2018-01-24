@@ -1,0 +1,164 @@
+<!-- HW02:Task 3
+Attributions/References: 
+1. Lorem Ipsem Text (4 paragraphs)
+   Link:https://www.lipsum.com/
+2. 99 Bottles (4 verses)
+   Link:https://en.wikipedia.org/wiki/99_Bottles_of_Beer	
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HW02 Task 03</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.header {
+	background-color: Blue;
+	color: white;
+	padding: 10px;
+}
+
+.body {
+	float: left;
+	padding: 15px;
+}
+
+.leftlinks {
+	width: 30%;
+}
+
+.content {
+	width: 70%;
+}
+
+.leftlinks li {
+	padding: 10px;
+	margin-bottom: 18px;
+	cursor: pointer;
+}
+
+h1 {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.vertical-partition {
+	width: 5px;
+	background-color: #000;
+	position: absolute;
+	top: 127px;
+	bottom: 0;
+	left: 350px;
+}
+
+a:hover {
+	color: blue;
+}
+</style>
+<script>
+	//function to change content on page based on link clicked on left panel
+	function displayLinkContent(linkClicked) {
+		if (linkClicked == "#LoremIpsem") {
+			var showcontent = document.getElementById(linkClicked);
+			showcontent.setAttribute('class', 'visible');
+			var hidecontent = document.getElementById("#99Bottles");
+			hidecontent.setAttribute('class', 'hidden');
+			var hidecontent = document.getElementById("#LastThing");
+			hidecontent.setAttribute('class', 'hidden');
+		}
+		if (linkClicked == "#99Bottles") {
+			var showcontent = document.getElementById(linkClicked);
+			showcontent.setAttribute('class', 'visible');
+			var hidecontent = document.getElementById("#LoremIpsem");
+			hidecontent.setAttribute('class', 'hidden');
+			var hidecontent = document.getElementById("#LastThing");
+			hidecontent.setAttribute('class', 'hidden');
+		}
+		if (linkClicked == "#LastThing") {
+			var showcontent = document.getElementById(linkClicked);
+			showcontent.setAttribute('class', 'visible');
+			var hidecontent = document.getElementById("#LoremIpsem");
+			hidecontent.setAttribute('class', 'hidden');
+			var hidecontent = document.getElementById("#99Bottles");
+			hidecontent.setAttribute('class', 'hidden');
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="header">
+		<h1>HW02 Task Three</h1>
+	</div>
+	<hr />
+	<hr />
+	<div class="mainpage">
+		<div class="body leftlinks">
+			<ul>
+				<li><a onclick="displayLinkContent('#LoremIpsem')">Lorem Ipsem</a></li>
+				<li><a onclick="displayLinkContent('#99Bottles')">99 Bottles</a></li>
+				<li><a onclick="displayLinkContent('#LastThing')">Last Thing</a></li>
+			</ul>
+		</div>
+		<div class="vertical-partition"></div>
+		<div class="body content">
+			<div id="#LoremIpsem" class="visible">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Aenean bibendum tempus hendrerit. Fusce ac odio erat. Mauris et
+					diam pulvinar risus venenatis elementum. Mauris blandit risus ut
+					tempor gravida. Integer at posuere odio. Suspendisse id imperdiet
+					massa. Morbi et venenatis metus. Donec dictum nisl eu ornare
+					elementum.</p>
+				<p>Quisque vulputate aliquam aliquet. Nulla accumsan mauris eu
+					ipsum rhoncus pretium. Proin sed laoreet tortor. Donec volutpat
+					fermentum enim at egestas. Aenean quis nisl non ex consequat porta.
+					Phasellus ac pellentesque nisl. Vivamus semper euismod lacinia.</p>
+				<p>Aenean ultrices convallis turpis iaculis porta. Sed neque
+					orci, fermentum a ligula quis, varius semper ante. Integer eu
+					pulvinar dui. Nunc euismod vulputate interdum. In iaculis vitae
+					tellus quis sollicitudin. Nulla facilisi. Sed pulvinar, magna at
+					elementum elementum, mauris arcu tristique tortor, non dapibus leo
+					sapien at justo. Curabitur quis fringilla dui. Praesent maximus
+					congue nisi, at egestas velit posuere quis. Vivamus ultricies quis
+					nisi quis accumsan. Sed massa arcu, mollis vel lacus ornare,
+					accumsan malesuada odio. Nulla quis tortor vitae mauris elementum
+					congue a sit amet diam. Aenean tempus erat et arcu luctus, sit amet
+					blandit nisl tempus. Integer viverra aliquam ligula a fringilla. In
+					a felis sit amet risus aliquam tristique. Mauris scelerisque
+					feugiat viverra.</p>
+				<p>Nunc interdum eleifend justo, sit amet lacinia felis
+					hendrerit bibendum. Maecenas volutpat urna leo, tempus tempus justo
+					feugiat sed. In hac habitasse platea dictumst. Donec egestas a nisl
+					a luctus. Aliquam erat volutpat. Suspendisse pharetra, dui at
+					bibendum tempus, ante elit mollis tellus, sit amet laoreet magna
+					lacus nec erat. Etiam volutpat facilisis ligula in ullamcorper.
+					Aliquam elit turpis, egestas at dolor in, laoreet scelerisque
+					ipsum. Ut euismod felis nisi. Morbi neque ex, mattis sit amet
+					lobortis vitae, ultricies non sem.</p>
+			</div>
+			<div id="#99Bottles" class="hidden">
+				<p>99 bottles of beer on the wall, 99 bottles of beer. Take one
+					down and pass it around, 98 bottles of beer on the wall.</p>
+				<p>98 bottles of beer on the wall, 98 bottles of beer. Take one
+					down and pass it around, 97 bottles of beer on the wall.</p>
+				<p>97 bottles of beer on the wall, 97 bottles of beer. Take one
+					down and pass it around, 96 bottles of beer on the wall.</p>
+				<p>96 bottles of beer on the wall, 96 bottles of beer. Take one
+					down and pass it around, 95 bottles of beer on the wall.</p>
+			</div>
+			<div id="#LastThing" class="hidden">
+				<p>This is the third thing.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

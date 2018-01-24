@@ -1,0 +1,65 @@
+<!-- HW02:Task 2-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>HW02 Task 02</title>
+<style>
+h1 {
+	text-align: center;
+}
+
+.button {
+	background-color: white;
+	border: 2px solid black;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 15px 20px;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.button:hover {
+	background-color: #ffbf00;
+	color: white;
+}
+</style>
+<script>
+	//declaring global variable
+	var currentNumber = 10;
+
+	//function to pop message displaying current value 
+	function popCurrentValue() {
+		document.getElementById('headerValue').innerHTML = currentNumber;
+		alert("Current Value : " + currentNumber);
+	}
+
+	//function to increment the current value
+	function incrementCurrentValue() {
+		currentNumber++;
+		document.getElementById('headerValue').innerHTML = currentNumber;
+	}
+
+	//function to display current value as paragraph at bottom of page
+	function displayCurrentValue() {
+		var createParagraph = document.createElement("p");
+		var textNode = document.createTextNode(currentNumber);
+		createParagraph.appendChild(textNode);
+		var elementForDisplay = document.getElementById("displayValue");
+		elementForDisplay.appendChild(createParagraph);
+	}
+</script>
+</head>
+<body>
+	<h1 id="headerValue">10</h1>
+	<button class="button" onclick="popCurrentValue()">Current Value</button>
+	<br />
+	<br />
+	<button class="button" onclick="incrementCurrentValue()">Increment Value</button>
+	<br />
+	<br />
+	<button class="button" onclick="displayCurrentValue()">Display Value</button>
+	<hr />
+	<div id="displayValue"></div>
+</body>
+</html>
